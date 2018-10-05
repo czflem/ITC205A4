@@ -1,0 +1,14 @@
+Created first UAT and tested
+Started first breakpoint testing on line 67 of CheckoutCTL
+	No result. Cost still = 0.0
+Added breakpoint to line 19 of ServiceCharge
+	ServiceCharge.getCost returns 0.0 
+		- Indicating there is no value saved
+		- Bug looking more like a setting error than a getting error
+Added breakpoint to line 11 of ServiceCharge
+	Checked setting the cost in ServiceCharge.ServiceCharge 
+	- Cost still = 0.0
+Went to add breakpoint to Booking.addServiceCharge and noticed bug - double variable "cost" was mispelled to "cosst"
+	- Corrected spelling error retested and successful results
+	- Bug fixed
+	
