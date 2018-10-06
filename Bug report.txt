@@ -1,14 +1,26 @@
-Created first UAT and tested
-Started first breakpoint testing on line 67 of CheckoutCTL
-	No result. Cost still = 0.0
-Added breakpoint to line 19 of ServiceCharge
-	ServiceCharge.getCost returns 0.0 
-		- Indicating there is no value saved
-		- Bug looking more like a setting error than a getting error
-Added breakpoint to line 11 of ServiceCharge
-	Checked setting the cost in ServiceCharge.ServiceCharge 
-	- Cost still = 0.0
-Went to add breakpoint to Booking.addServiceCharge and noticed bug - double variable "cost" was mispelled to "cosst"
-	- Corrected spelling error retested and successful results
-	- Bug fixed
+Start bug1:
+	Created first UAT and tested
+	Started first breakpoint testing on line 69 of CheckoutCTL
+		No result. Cost still = 0.0
+	Added breakpoint to line 19 of ServiceCharge
+		ServiceCharge.getCost returns 0.0 
+			- Indicating there is no value saved
+			- Bug looking more like a setting error than a getting error
+	Added breakpoint to line 11 of ServiceCharge
+		Checked setting the cost in ServiceCharge.ServiceCharge 
+		- Cost still = 0.0
+	Went to add breakpoint to Booking.addServiceCharge and noticed bug - double variable "cost" was mispelled to "cosst"
+		- Corrected spelling error retested and successful results
+		- Bug fixed
 	
+Start bug2:
+	Created second UAT and tested
+	Started first breakpoint at line 39 of RecordServiceCTL
+	Bug appears to be that the room id is still active in the "activeBookingsByRoomId" hashmap in Hotel
+		- Discovered due to the booking is simply searching the hashmap for valid roomId ints that match user input
+		- 
+	Followed the checkout process and no removal of a roomID from hashmap was put in. 
+		- Added hashmap remove to line 129 of Hotel
+		- Tested with UAT test scenario and with additional book in with random dates
+		- "No active booking for room id: 101" is returned when attempting to add a service for checked out room
+		- Bug fixed

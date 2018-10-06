@@ -75,7 +75,7 @@ public class CheckoutCTL {
 			String mesg = sb.toString();
 			checkoutUI.displayMessage(mesg);
 			state = State.ACCEPT;
-			checkoutUI.setState(CheckoutUI.State.ACCEPT);	
+			checkoutUI.setState(CheckoutUI.State.ACCEPT);
 		}
 	}
 
