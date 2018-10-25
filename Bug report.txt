@@ -27,3 +27,11 @@ Start bug2:
 		- Tested with UAT test scenario and with additional book in with random dates
 		- "No active booking for room id: 101" is returned when attempting to add a service for checked out room
 		- Bug fixed - User unable to charge a room for services if room is not checked in
+		
+Post bugs:
+    Went back and removed bug fixes to run trace correctly
+    Traced serviceCharge to determine where it went wrong
+        - Resulted as expected, cosst not being applied to end result
+    Followed bug 2 and found activeBookingsByRoomId was active with associated roomId if the room was ever checked in
+        - Tested without checking in ever and no bug present, proper error presented
+    Once activeBookingsByRoomId was fixed to remove the proper roomId when checked out, bug fixed
